@@ -1,22 +1,22 @@
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
-import { 
-  Clock, 
-  Building2, 
-  CheckCircle2, 
+import {
+  Clock,
+  Building2,
+  CheckCircle2,
   ArrowRight,
   Sparkles,
   Target,
-  TrendingUp
+  TrendingUp,
 } from "lucide-react";
-import { 
-  Accordion, 
-  AccordionContent, 
-  AccordionItem, 
-  AccordionTrigger 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
 } from "./components/ui/accordion";
 import { useState } from "react";
-import logo from "figma:asset/be37f96b627a371122357e3ccccb67769d2f8ee6.png";
+import logo from "../assets/be37f96b627a371122357e3ccccb67769d2f8ee6.png";
 
 export default function App() {
   const [email, setEmail] = useState("");
@@ -28,7 +28,12 @@ export default function App() {
   };
 
   const companies = [
-    "Amazon", "Microsoft", "Meta", "AthenaHealth", "Headspace", "HEB"
+    "Amazon",
+    "Microsoft",
+    "Meta",
+    "AthenaHealth",
+    "Headspace",
+    "HEB",
   ];
 
   return (
@@ -38,7 +43,11 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <img src={logo} alt="AC4D" className="h-10" />
-            <Button variant="outline" size="sm" className="border-[#c4248f] text-[#c4248f] hover:bg-[#c4248f] hover:text-white">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-[#c4248f] text-[#c4248f] hover:bg-[#c4248f] hover:text-white"
+            >
               Talk to an Advisor
             </Button>
           </div>
@@ -69,23 +78,28 @@ export default function App() {
                 For mid-level designers who want to{" "}
                 <span className="text-[#c4248f]">lead the work</span>
               </h1>
-              
+
               <p className="text-xl text-[#676766] mb-8 leading-relaxed">
-                A certificate that gives you the senior-level reps you can't get at work, including facilitation, stakeholder influence, and strategic decision-making on real problems.
+                A certificate that gives you the senior-level reps you can't get
+                at work, including facilitation, stakeholder influence, and
+                strategic decision-making on real problems.
               </p>
 
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 mb-4">
-                <Input 
-                  type="email" 
-                  placeholder="Enter your email" 
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col sm:flex-row gap-3 mb-4"
+              >
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="flex-1 border-[#676766]/30 focus:border-[#ca2a28] focus:ring-[#ca2a28]"
                   required
                 />
-                <Button 
-                  type="submit" 
-                  size="lg" 
+                <Button
+                  type="submit"
+                  size="lg"
                   className="sm:w-auto w-full bg-[#c4248f] hover:bg-[#c4248f]/90 text-white"
                 >
                   Send Me the Curriculum
@@ -104,8 +118,13 @@ export default function App() {
                         <Target className="size-6 text-[#ca2a28]" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-gray-900 mb-1">Strategic Reps</h3>
-                        <p className="text-sm text-[#676766]">Dozens of facilitation exercises with real stakeholder dynamics</p>
+                        <h3 className="font-bold text-gray-900 mb-1">
+                          Strategic Reps
+                        </h3>
+                        <p className="text-sm text-[#676766]">
+                          Dozens of facilitation exercises with real stakeholder
+                          dynamics
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
@@ -113,8 +132,12 @@ export default function App() {
                         <Sparkles className="size-6 text-[#c4248f]" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-gray-900 mb-1">Wicked Problems</h3>
-                        <p className="text-sm text-[#676766]">Not app redesigns—actual complex social challenges</p>
+                        <h3 className="font-bold text-gray-900 mb-1">
+                          Wicked Problems
+                        </h3>
+                        <p className="text-sm text-[#676766]">
+                          Not app redesigns—actual complex social challenges
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
@@ -122,8 +145,13 @@ export default function App() {
                         <TrendingUp className="size-6 text-[#9bcb3c]" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-gray-900 mb-1">Portfolio Ready</h3>
-                        <p className="text-sm text-[#676766]">Case studies showing systems thinking, not just screens</p>
+                        <h3 className="font-bold text-gray-900 mb-1">
+                          Portfolio Ready
+                        </h3>
+                        <p className="text-sm text-[#676766]">
+                          Case studies showing systems thinking, not just
+                          screens
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -142,7 +170,10 @@ export default function App() {
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8">
             {companies.map((company) => (
-              <span key={company} className="text-lg font-semibold text-[#676766]/50">
+              <span
+                key={company}
+                className="text-lg font-semibold text-[#676766]/50"
+              >
                 {company}
               </span>
             ))}
@@ -157,10 +188,13 @@ export default function App() {
             You're doing the work, but you're not getting the opportunities.
           </h2>
           <p className="text-xl text-[#676766] text-center max-w-3xl mx-auto leading-relaxed mb-4">
-            When senior roles open, they go to someone else. You've tried YouTube, books, short courses—none of it changed how you're perceived in interviews or promotion conversations.
+            When senior roles open, they go to someone else. You've tried
+            YouTube, books, short courses—none of it changed how you're
+            perceived in interviews or promotion conversations.
           </p>
           <p className="text-2xl font-bold text-[#ca2a28] text-center">
-            The gap isn't more UX knowledge. It's strategic reps you can't get on your own.
+            The gap isn't more UX knowledge. It's strategic reps you can't get
+            on your own.
           </p>
         </div>
       </section>
@@ -169,11 +203,17 @@ export default function App() {
       <section className="bg-gradient-to-br from-[#ca2a28] to-[#c4248f] text-white py-20 sm:py-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-5xl font-bold mb-8 leading-tight">
-            AC4D compresses what typically takes 5+ years of lucky breaks into 4 months of intentional practice
+            AC4D compresses what typically takes 5+ years of lucky breaks into 4
+            months of intentional practice
           </h2>
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
             <p className="text-lg leading-relaxed mb-4 text-white/95">
-              You'll join a small cohort of working designers tackling wicked social problems—not app redesigns or tutorial projects. This is real-time collaboration with peers at your level, not self-paced isolation. You'll build the strategic judgment and facilitation skills senior roles require, with case studies you can show employers.
+              You'll join a small cohort of working designers tackling wicked
+              social problems—not app redesigns or tutorial projects. This is
+              real-time collaboration with peers at your level, not self-paced
+              isolation. You'll build the strategic judgment and facilitation
+              skills senior roles require, with case studies you can show
+              employers.
             </p>
             <p className="text-lg font-semibold text-white">
               Built on 12+ years of teaching design at the Masters level.
@@ -199,7 +239,8 @@ export default function App() {
                 Lead strategy work, not just execute it
               </h3>
               <p className="text-[#676766] leading-relaxed text-lg">
-                Build multiple wicked-problem case studies that show systems thinking and tradeoffs, not just polished screens
+                Build multiple wicked-problem case studies that show systems
+                thinking and tradeoffs, not just polished screens
               </p>
             </div>
 
@@ -211,7 +252,8 @@ export default function App() {
                 Walk into senior interviews ready
               </h3>
               <p className="text-[#676766] leading-relaxed text-lg">
-                Get dozens of facilitation and stakeholder management reps so leadership conversations feel familiar, not foreign
+                Get dozens of facilitation and stakeholder management reps so
+                leadership conversations feel familiar, not foreign
               </p>
             </div>
 
@@ -223,7 +265,9 @@ export default function App() {
                 Future-proof your career against AI
               </h3>
               <p className="text-[#676766] leading-relaxed text-lg">
-                Master the strategic judgment and facilitation skills that AI can't replace—synthesis, stakeholder alignment, and navigating ambiguity
+                Master the strategic judgment and facilitation skills that AI
+                can't replace—synthesis, stakeholder alignment, and navigating
+                ambiguity
               </p>
             </div>
           </div>
@@ -238,7 +282,9 @@ export default function App() {
           <blockquote className="text-center">
             <div className="text-6xl text-[#c4248f] mb-6">"</div>
             <p className="text-2xl sm:text-3xl text-gray-900 mb-8 leading-relaxed font-medium">
-              What I value most about my experience at AC4D is that it continues to be the foundation that gives me the confidence and autonomy to adjust year to year as 'what I want to be doing' keeps evolving.
+              What I value most about my experience at AC4D is that it continues
+              to be the foundation that gives me the confidence and autonomy to
+              adjust year to year as 'what I want to be doing' keeps evolving.
             </p>
             <footer className="text-[#676766] font-semibold text-lg">
               — AC4D Graduate
@@ -258,20 +304,28 @@ export default function App() {
               <div className="flex items-start gap-4">
                 <CheckCircle2 className="size-6 text-[#9bcb3c] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-bold text-gray-900 text-lg">4 courses over 6 months</p>
+                  <p className="font-bold text-gray-900 text-lg">
+                    4 courses over 6 months
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <CheckCircle2 className="size-6 text-[#9bcb3c] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-bold text-gray-900 text-lg">10 hours/week</p>
-                  <p className="text-[#676766]">2 weekday evenings + 1 weekend session</p>
+                  <p className="font-bold text-gray-900 text-lg">
+                    10 hours/week
+                  </p>
+                  <p className="text-[#676766]">
+                    2 weekday evenings + 1 weekend session
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <CheckCircle2 className="size-6 text-[#9bcb3c] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-bold text-gray-900 text-lg">12-15 person cohorts</p>
+                  <p className="font-bold text-gray-900 text-lg">
+                    12-15 person cohorts
+                  </p>
                   <p className="text-[#676766]">with live instruction</p>
                 </div>
               </div>
@@ -299,39 +353,63 @@ export default function App() {
             Frequently Asked Questions
           </h2>
           <Accordion type="single" collapsible className="space-y-4">
-            <AccordionItem value="item-1" className="bg-gray-50 border-2 border-gray-200 rounded-xl px-6 data-[state=open]:border-[#ca2a28]">
+            <AccordionItem
+              value="item-1"
+              className="bg-gray-50 border-2 border-gray-200 rounded-xl px-6 data-[state=open]:border-[#ca2a28]"
+            >
               <AccordionTrigger className="text-left font-bold text-gray-900 hover:no-underline text-lg">
                 Can I do this while working full-time?
               </AccordionTrigger>
               <AccordionContent className="text-[#676766] leading-relaxed text-lg">
-                Yes. The program is designed for it. 10-12 hours a week is real, but it's structured—not sprawling. Most students find it more sustainable than piecemeal YouTube/books/side-projects because there's a clear container and endpoint.
+                Yes. The program is designed for it. 10-12 hours a week is real,
+                but it's structured—not sprawling. Most students find it more
+                sustainable than piecemeal YouTube/books/side-projects because
+                there's a clear container and endpoint.
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-2" className="bg-gray-50 border-2 border-gray-200 rounded-xl px-6 data-[state=open]:border-[#ca2a28]">
+            <AccordionItem
+              value="item-2"
+              className="bg-gray-50 border-2 border-gray-200 rounded-xl px-6 data-[state=open]:border-[#ca2a28]"
+            >
               <AccordionTrigger className="text-left font-bold text-gray-900 hover:no-underline text-lg">
                 Is this like a bootcamp?
               </AccordionTrigger>
               <AccordionContent className="text-[#676766] leading-relaxed text-lg">
-                No. Bootcamps are built to get career-changers into entry-level roles through tactical skills. AC4D is built to help practicing designers move from mid-level execution into senior strategic work. The pedagogy, projects, and expectations are different.
+                No. Bootcamps are built to get career-changers into entry-level
+                roles through tactical skills. AC4D is built to help practicing
+                designers move from mid-level execution into senior strategic
+                work. The pedagogy, projects, and expectations are different.
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-3" className="bg-gray-50 border-2 border-gray-200 rounded-xl px-6 data-[state=open]:border-[#ca2a28]">
+            <AccordionItem
+              value="item-3"
+              className="bg-gray-50 border-2 border-gray-200 rounded-xl px-6 data-[state=open]:border-[#ca2a28]"
+            >
               <AccordionTrigger className="text-left font-bold text-gray-900 hover:no-underline text-lg">
                 What's the deal with AI in the program?
               </AccordionTrigger>
               <AccordionContent className="text-[#676766] leading-relaxed text-lg">
-                AI is embedded into how you work, not taught as a separate module. You'll use it to support synthesis, patterning, and scenario exploration—while you develop the strategic judgment AI can't replace. The goal is to make you more valuable in an AI world.
+                AI is embedded into how you work, not taught as a separate
+                module. You'll use it to support synthesis, patterning, and
+                scenario exploration—while you develop the strategic judgment AI
+                can't replace. The goal is to make you more valuable in an AI
+                world.
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-4" className="bg-gray-50 border-2 border-gray-200 rounded-xl px-6 data-[state=open]:border-[#ca2a28]">
+            <AccordionItem
+              value="item-4"
+              className="bg-gray-50 border-2 border-gray-200 rounded-xl px-6 data-[state=open]:border-[#ca2a28]"
+            >
               <AccordionTrigger className="text-left font-bold text-gray-900 hover:no-underline text-lg">
                 Will my employer pay for this?
               </AccordionTrigger>
               <AccordionContent className="text-[#676766] leading-relaxed text-lg">
-                Many do. Tuition reimbursement programs typically cover $5,000-5,250/year—meaning your company may pay for most of it. Worth asking HR before you assume it's out of pocket.
+                Many do. Tuition reimbursement programs typically cover
+                $5,000-5,250/year—meaning your company may pay for most of it.
+                Worth asking HR before you assume it's out of pocket.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -341,29 +419,37 @@ export default function App() {
       {/* Final CTA */}
       <section className="relative overflow-hidden py-20 sm:py-28">
         <div className="absolute inset-0 bg-gradient-to-br from-[#ca2a28] via-[#c4248f] to-[#ca2a28]" />
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-          backgroundSize: '32px 32px'
-        }} />
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+            backgroundSize: "32px 32px",
+          }}
+        />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <h2 className="text-3xl sm:text-5xl font-bold mb-6 text-white leading-tight">
             Get the full curriculum free
           </h2>
           <p className="text-xl mb-10 text-white/95 max-w-2xl mx-auto leading-relaxed">
-            See exactly what you'll learn, how the cohort works, and whether AC4D fits where you are in your career.
+            See exactly what you'll learn, how the cohort works, and whether
+            AC4D fits where you are in your career.
           </p>
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
-            <Input 
-              type="email" 
-              placeholder="Enter your email" 
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
+          >
+            <Input
+              type="email"
+              placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="flex-1 bg-white border-0 h-14 text-lg"
               required
             />
-            <Button 
-              type="submit" 
-              size="lg" 
+            <Button
+              type="submit"
+              size="lg"
               className="sm:w-auto w-full bg-[#9bcb3c] hover:bg-[#9bcb3c]/90 text-gray-900 h-14 px-8 font-bold text-lg"
             >
               Send Me the Curriculum
@@ -379,9 +465,15 @@ export default function App() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
             <img src={logo} alt="AC4D" className="h-10 brightness-0 invert" />
             <div className="flex gap-8 text-sm">
-              <a href="#" className="hover:text-[#9bcb3c] transition-colors">Privacy</a>
-              <a href="#" className="hover:text-[#9bcb3c] transition-colors">Terms</a>
-              <a href="#" className="hover:text-[#9bcb3c] transition-colors">Contact</a>
+              <a href="#" className="hover:text-[#9bcb3c] transition-colors">
+                Privacy
+              </a>
+              <a href="#" className="hover:text-[#9bcb3c] transition-colors">
+                Terms
+              </a>
+              <a href="#" className="hover:text-[#9bcb3c] transition-colors">
+                Contact
+              </a>
             </div>
           </div>
           <div className="text-center sm:text-left mt-8 text-sm text-white/70">
