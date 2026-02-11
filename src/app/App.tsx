@@ -92,14 +92,6 @@ export default function App() {
                 onSubmit={handleSubmit}
                 className="flex flex-col sm:flex-row gap-3 mb-4"
               >
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 border-[#676766]/30 focus:border-[#ca2a28] focus:ring-[#ca2a28]"
-                  required
-                />
                 <Button
                   type="submit"
                   size="lg"
@@ -297,18 +289,24 @@ export default function App() {
       </section>
 
       {/* Program Details */}
-      <section className="py-20 sm:py-28 bg-gray-50">
+      <section className="py-24 sm:py-32 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white border-4 border-[#c4248f] rounded-3xl p-8 sm:p-12 shadow-xl">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-10">
+          <div className="bg-white border-4 border-[#c4248f] rounded-3xl p-10 sm:p-14 shadow-xl">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center">
               Strategic Design Certificate
             </h2>
-            <div className="grid sm:grid-cols-2 gap-8 mb-10">
+            <p className="text-center text-sm uppercase tracking-[0.2em] text-[#676766] mt-6 mb-12">
+              Program Details
+            </p>
+            <div className="grid sm:grid-cols-2 gap-10 mb-12">
               <div className="flex items-start gap-4">
                 <CheckCircle2 className="size-6 text-[#9bcb3c] mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-bold text-gray-900 text-lg">
                     4 courses over 6 months
+                  </p>
+                  <p className="text-[#676766]">
+                    Designed for working professionals
                   </p>
                 </div>
               </div>
@@ -340,10 +338,25 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <div className="bg-[#9bcb3c]/10 rounded-xl p-6 text-center">
+            <div className="bg-gray-100 rounded-xl p-6 text-center">
               <p className="text-[#676766] font-medium text-lg">
                 Many employers cover this through tuition reimbursement.
               </p>
+            </div>
+            <div className="mt-12 flex flex-col items-center gap-3 text-center">
+              <Button
+                type="button"
+                size="lg"
+                className="bg-[#c4248f] hover:bg-[#c4248f]/90 text-white"
+              >
+                Send Me the Curriculum
+              </Button>
+              <a
+                href="#"
+                className="text-sm font-semibold text-[#676766] hover:text-[#c4248f]"
+              >
+                or talk to an advisor to see if this is right for you.
+              </a>
             </div>
           </div>
         </div>
@@ -442,25 +455,13 @@ export default function App() {
             See exactly what you'll learn, how the cohort works, and whether
             AC4D fits where you are in your career.
           </p>
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
-          >
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 bg-white border-0 h-14 text-lg"
-              required
-            />
+          <form onSubmit={handleSubmit} className="flex justify-center">
             <Button
               type="submit"
               size="lg"
-              className="sm:w-auto w-full bg-[#9bcb3c] hover:bg-[#9bcb3c]/90 text-gray-900 h-14 px-8 font-bold text-lg"
+              className="bg-white/90 hover:bg-white text-gray-900 h-14 px-8 font-bold text-md"
             >
               Send Me the Curriculum
-              <ArrowRight className="ml-2 size-5" />
             </Button>
           </form>
         </div>
