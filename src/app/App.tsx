@@ -197,40 +197,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Visual Showcase */}
-      <section className="py-6 sm:py-8 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-3 sm:gap-4">
-            <div className="md:col-span-2 overflow-hidden rounded-lg shadow-md">
-              <img
-                src={demo2}
-                alt="AC4D workshop in action"
-                className="w-full h-full object-cover aspect-[16/10]"
-                loading="lazy"
-              />
-            </div>
-            <div className="grid grid-rows-2 gap-3 sm:gap-4">
-              <div className="overflow-hidden rounded-lg shadow-md">
-                <img
-                  src={demo0}
-                  alt="Strategic design collaboration"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="overflow-hidden rounded-lg shadow-md">
-                <img
-                  src={demo1}
-                  alt="Design thinking session"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Solution Bridge */}
       <section className="bg-gradient-to-br from-[#ca2a28] to-[#c4248f] text-white py-20 sm:py-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -238,7 +204,7 @@ export default function App() {
             AC4D compresses what typically takes 5+ years of lucky breaks into 4
             months of intentional practice
           </h2>
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 mb-8">
             <p className="text-lg leading-relaxed mb-4 text-white/95">
               You'll join a small cohort of working designers tackling wicked
               social problems—homelessness, healthcare access, financial
@@ -250,6 +216,32 @@ export default function App() {
             <p className="text-lg font-semibold text-white">
               Built on 12+ years of teaching design at the Masters level.
             </p>
+          </div>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="overflow-hidden rounded-lg shadow-lg">
+              <img
+                src={demo0}
+                alt="AC4D workshop in action"
+                className="w-full h-full object-cover aspect-[4/3]"
+                loading="lazy"
+              />
+            </div>
+            <div className="overflow-hidden rounded-lg shadow-lg">
+              <img
+                src={demo1}
+                alt="Strategic design collaboration"
+                className="w-full h-full object-cover aspect-[4/3]"
+                loading="lazy"
+              />
+            </div>
+            <div className="overflow-hidden rounded-lg shadow-lg">
+              <img
+                src={demo2}
+                alt="Design thinking session"
+                className="w-full h-full object-cover aspect-[4/3]"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
