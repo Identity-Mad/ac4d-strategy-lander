@@ -1,5 +1,4 @@
 import { Button } from "./components/ui/button";
-import { Input } from "./components/ui/input";
 import {
   Award,
   Building2,
@@ -15,7 +14,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./components/ui/accordion";
-import { useState } from "react";
 import logo from "../assets/logo.png";
 import amazonLogo from "../assets/logos/AMAZON.webp";
 import microsoftLogo from "../assets/logos/MICROSOFT.webp";
@@ -29,13 +27,8 @@ import demo2 from "../assets/demo2.jpeg";
 import demo0 from "../assets/demo0.jpeg";
 import testimonialWorking from "../assets/testimonial-working.jpg";
 export default function App() {
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log("Email submitted:", email);
-  };
+  const curriculumDownloadUrl =
+    "https://drive.google.com/uc?export=download&id=1kehaANHsm6GO0XZsVkaHtUuK8mr8n_1B";
 
   const companies = [
     { name: "Amazon", logo: amazonLogo },
@@ -92,18 +85,22 @@ export default function App() {
                 years of on-the-job learning.
               </p>
 
-              <form
-                onSubmit={handleSubmit}
-                className="flex flex-col sm:flex-row gap-3 mb-4"
-              >
+              <div className="flex flex-col sm:flex-row gap-3 mb-4">
                 <Button
-                  type="submit"
+                  asChild
                   size="lg"
                   className="sm:w-auto w-full bg-[#c4248f] hover:bg-[#c4248f]/90 text-white"
                 >
-                  Send Me the Curriculum
+                  <a
+                    href={curriculumDownloadUrl}
+                    download
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Download the Curriculum
+                  </a>
                 </Button>
-              </form>
+              </div>
             </div>
 
             <div className="hidden lg:block">
@@ -397,11 +394,18 @@ export default function App() {
             </div>
             <div className="mt-12 flex flex-col items-center gap-3 text-center">
               <Button
-                type="button"
+                asChild
                 size="lg"
                 className="bg-[#c4248f] hover:bg-[#c4248f]/90 text-white"
               >
-                Send Me the Curriculum
+                <a
+                  href={curriculumDownloadUrl}
+                  download
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Download the Curriculum
+                </a>
               </Button>
               <a
                 href="#"
@@ -507,15 +511,22 @@ export default function App() {
             See exactly what you'll learn, how the cohort works, and whether
             AC4D fits where you are in your career.
           </p>
-          <form onSubmit={handleSubmit} className="flex justify-center">
+          <div className="flex justify-center">
             <Button
-              type="submit"
+              asChild
               size="lg"
               className="bg-white/90 hover:bg-white text-gray-900 h-14 px-8 font-bold text-md"
             >
-              Send Me the Curriculum
+              <a
+                href={curriculumDownloadUrl}
+                download
+                target="_blank"
+                rel="noreferrer"
+              >
+                Download the Curriculum
+              </a>
             </Button>
-          </form>
+          </div>
         </div>
       </section>
 
