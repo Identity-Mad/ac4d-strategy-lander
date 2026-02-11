@@ -26,7 +26,8 @@ import hebLogo from "../assets/logos/HEB.webp";
 import jessicaPhoto from "../assets/JessicaLeibowitz.webp";
 import demo1 from "../assets/demo1.jpeg";
 import demo2 from "../assets/demo2.jpeg";
-import demo0 from "../assets/demo0.jpeg";import testimonialWorking from "../assets/testimonial-working.jpg";
+import demo0 from "../assets/demo0.jpeg";
+import testimonialWorking from "../assets/testimonial-working.jpg";
 export default function App() {
   const [email, setEmail] = useState("");
 
