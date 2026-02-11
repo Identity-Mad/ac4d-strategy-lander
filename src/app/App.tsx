@@ -23,7 +23,10 @@ import metaLogo from "../assets/logos/META.webp";
 import athenaLogo from "../assets/logos/ATHENA.webp";
 import headspaceLogo from "../assets/logos/HEADSPACE.webp";
 import hebLogo from "../assets/logos/HEB.webp";
-
+import jessicaPhoto from "../assets/JessicaLeibowitz.webp";
+import demo1 from "../assets/demo1.jpeg";
+import demo2 from "../assets/demo2.jpeg";
+import demo0 from "../assets/demo0.jpeg";import testimonialWorking from "../assets/testimonial-working.jpg";
 export default function App() {
   const [email, setEmail] = useState("");
 
@@ -193,6 +196,40 @@ export default function App() {
         </div>
       </section>
 
+      {/* Visual Showcase */}
+      <section className="py-6 sm:py-8 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-3 sm:gap-4">
+            <div className="md:col-span-2 overflow-hidden rounded-lg shadow-md">
+              <img
+                src={demo2}
+                alt="AC4D workshop in action"
+                className="w-full h-full object-cover aspect-[16/10]"
+                loading="lazy"
+              />
+            </div>
+            <div className="grid grid-rows-2 gap-3 sm:gap-4">
+              <div className="overflow-hidden rounded-lg shadow-md">
+                <img
+                  src={demo0}
+                  alt="Strategic design collaboration"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="overflow-hidden rounded-lg shadow-md">
+                <img
+                  src={demo1}
+                  alt="Design thinking session"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Solution Bridge */}
       <section className="bg-gradient-to-br from-[#ca2a28] to-[#c4248f] text-white py-20 sm:py-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -273,18 +310,40 @@ export default function App() {
       <section className="bg-white py-20 sm:py-28 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-64 h-64 bg-[#c4248f]/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#9bcb3c]/5 rounded-full blur-3xl" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <blockquote className="text-center">
-            <div className="text-6xl text-[#c4248f] mb-6">"</div>
-            <p className="text-2xl sm:text-3xl text-gray-900 mb-8 leading-relaxed font-medium">
-              What I value most about my experience at AC4D is that it continues
-              to be the foundation that gives me the confidence and autonomy to
-              adjust year to year as 'what I want to be doing' keeps evolving.
-            </p>
-            <footer className="text-[#676766] font-semibold text-lg">
-              — AC4D Graduate
-            </footer>
-          </blockquote>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <blockquote>
+              <div className="text-6xl text-[#c4248f] mb-6">"</div>
+              <p className="text-2xl sm:text-3xl text-gray-900 mb-8 leading-relaxed font-medium">
+                AC4D gave me the confidence and skills to thrive in ambiguity.
+                Within the first few months on the job, I was synthesizing
+                research, preparing strategic documents, and designing and
+                facilitating workshops to align teams and stakeholders on key
+                decisions.
+              </p>
+              <footer className="flex items-center gap-3 text-[#676766] font-semibold text-lg">
+                <div className="h-12 w-12 overflow-hidden rounded-full border border-gray-200/60 shadow-sm">
+                  <img
+                    src={jessicaPhoto}
+                    alt="Jessica Leibowitz"
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <span>Jessica L, AC4D Graduate</span>
+              </footer>
+            </blockquote>
+            <div className="relative">
+              <div className="overflow-hidden rounded-2xl shadow-2xl">
+                <img
+                  src={testimonialWorking}
+                  alt="Jessica facilitating a workshop"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
