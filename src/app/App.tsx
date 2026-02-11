@@ -1,7 +1,7 @@
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
 import {
-  Clock,
+  Award,
   Building2,
   CheckCircle2,
   ArrowRight,
@@ -16,7 +16,13 @@ import {
   AccordionTrigger,
 } from "./components/ui/accordion";
 import { useState } from "react";
-import logo from "../assets/be37f96b627a371122357e3ccccb67769d2f8ee6.png";
+import logo from "../assets/logo.png";
+import amazonLogo from "../assets/logos/AMAZON.webp";
+import microsoftLogo from "../assets/logos/MICROSOFT.webp";
+import metaLogo from "../assets/logos/META.webp";
+import athenaLogo from "../assets/logos/ATHENA.webp";
+import headspaceLogo from "../assets/logos/HEADSPACE.webp";
+import hebLogo from "../assets/logos/HEB.webp";
 
 export default function App() {
   const [email, setEmail] = useState("");
@@ -28,12 +34,12 @@ export default function App() {
   };
 
   const companies = [
-    "Amazon",
-    "Microsoft",
-    "Meta",
-    "AthenaHealth",
-    "Headspace",
-    "HEB",
+    { name: "Amazon", logo: amazonLogo },
+    { name: "Microsoft", logo: microsoftLogo },
+    { name: "Meta", logo: metaLogo },
+    { name: "AthenaHealth", logo: athenaLogo },
+    { name: "Headspace", logo: headspaceLogo },
+    { name: "HEB", logo: hebLogo },
   ];
 
   return (
@@ -62,15 +68,12 @@ export default function App() {
             <div>
               <div className="flex flex-wrap gap-2 mb-6">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-[#676766]/20 rounded-full text-sm text-[#676766] shadow-sm">
-                  <Clock className="size-4" />
-                  4-Month Certificate
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#9bcb3c]/10 border border-[#9bcb3c]/30 rounded-full text-sm text-[#676766] shadow-sm">
-                  Works alongside your job
+                  <Award className="size-4" />
+                  Strategic Design Certificate
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-[#676766]/20 rounded-full text-sm text-[#676766] shadow-sm">
                   <Building2 className="size-4" />
-                  Employer eligible
+                  Employer Reimbursement
                 </span>
               </div>
 
@@ -80,9 +83,9 @@ export default function App() {
               </h1>
 
               <p className="text-xl text-[#676766] mb-8 leading-relaxed">
-                A certificate that gives you the senior-level reps you can't get
-                at work, including facilitation, stakeholder influence, and
-                strategic decision-making on real problems.
+                A four-month program that builds senior-level skills in problem
+                framing, stakeholder influence, and strategy, compressed from
+                years of on-the-job learning.
               </p>
 
               <form
@@ -103,7 +106,6 @@ export default function App() {
                   className="sm:w-auto w-full bg-[#c4248f] hover:bg-[#c4248f]/90 text-white"
                 >
                   Send Me the Curriculum
-                  <ArrowRight className="ml-2 size-4" />
                 </Button>
               </form>
             </div>
@@ -119,11 +121,10 @@ export default function App() {
                       </div>
                       <div>
                         <h3 className="font-bold text-gray-900 mb-1">
-                          Strategic Reps
+                          Small Cohorts
                         </h3>
                         <p className="text-sm text-[#676766]">
-                          Dozens of facilitation exercises with real stakeholder
-                          dynamics
+                          12–15 designers, live instruction, real collaboration
                         </p>
                       </div>
                     </div>
@@ -136,7 +137,7 @@ export default function App() {
                           Wicked Problems
                         </h3>
                         <p className="text-sm text-[#676766]">
-                          Not app redesigns—actual complex social challenges
+                          Work on complex social challenges with real tradeoffs
                         </p>
                       </div>
                     </div>
@@ -146,11 +147,10 @@ export default function App() {
                       </div>
                       <div>
                         <h3 className="font-bold text-gray-900 mb-1">
-                          Portfolio Ready
+                          Built for Promotion
                         </h3>
                         <p className="text-sm text-[#676766]">
-                          Case studies showing systems thinking, not just
-                          screens
+                          Proof of strategic thinking for interviews and reviews
                         </p>
                       </div>
                     </div>
@@ -163,19 +163,20 @@ export default function App() {
       </section>
 
       {/* Social Proof */}
-      <section className="border-y border-gray-200 bg-gray-50 py-10">
+      <section className="border-y border-gray-800 bg-gray-900 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm text-[#676766] mb-6 font-semibold">
-            AC4D graduates are now at companies like:
+          <p className="text-center text-sm text-gray-300 mb-8 font-semibold">
+            Where AC4D Alumni Have Been
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8">
+          <div className="flex flex-wrap justify-center items-center gap-10 sm:gap-12">
             {companies.map((company) => (
-              <span
-                key={company}
-                className="text-lg font-semibold text-[#676766]/50"
-              >
-                {company}
-              </span>
+              <img
+                key={company.name}
+                src={company.logo}
+                alt={`${company.name} logo`}
+                className="h-6 w-auto object-contain opacity-90 sm:h-7"
+                loading="lazy"
+              />
             ))}
           </div>
         </div>
@@ -188,13 +189,14 @@ export default function App() {
             You're doing the work, but you're not getting the opportunities.
           </h2>
           <p className="text-xl text-[#676766] text-center max-w-3xl mx-auto leading-relaxed mb-4">
-            When senior roles open, they go to someone else. You've tried
-            YouTube, books, short courses—none of it changed how you're
-            perceived in interviews or promotion conversations.
+            You've tried YouTube, books, short courses—maybe even a bootcamp.
+            You came out with new tools and portfolio pieces, but nothing that
+            changed how you're perceived in interviews or promotion
+            conversations.
           </p>
           <p className="text-2xl font-bold text-[#ca2a28] text-center">
-            The gap isn't more UX knowledge. It's strategic reps you can't get
-            on your own.
+            The gap isn't more UX knowledge. It's strategic practice you can't
+            get on your own.
           </p>
         </div>
       </section>
@@ -209,11 +211,11 @@ export default function App() {
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
             <p className="text-lg leading-relaxed mb-4 text-white/95">
               You'll join a small cohort of working designers tackling wicked
-              social problems—not app redesigns or tutorial projects. This is
-              real-time collaboration with peers at your level, not self-paced
-              isolation. You'll build the strategic judgment and facilitation
-              skills senior roles require, with case studies you can show
-              employers.
+              social problems—homelessness, healthcare access, financial
+              inclusion—not app redesigns or tutorial projects with
+              predetermined solutions. These are the kinds of ambiguous,
+              high-stakes problems that senior designers face daily, where
+              there's no answer key and the tradeoffs are real.
             </p>
             <p className="text-lg font-semibold text-white">
               Built on 12+ years of teaching design at the Masters level.
@@ -239,8 +241,9 @@ export default function App() {
                 Lead strategy work, not just execute it
               </h3>
               <p className="text-[#676766] leading-relaxed text-lg">
-                Build multiple wicked-problem case studies that show systems
-                thinking and tradeoffs, not just polished screens
+                Develop your own frameworks for navigating ambiguous problems
+                and leave with proof of strategic thinking, not just polished
+                screens.
               </p>
             </div>
 
@@ -253,7 +256,7 @@ export default function App() {
               </h3>
               <p className="text-[#676766] leading-relaxed text-lg">
                 Get dozens of facilitation and stakeholder management reps so
-                leadership conversations feel familiar, not foreign
+                you can articulate how you think, not just what you've made.
               </p>
             </div>
 
@@ -265,9 +268,9 @@ export default function App() {
                 Future-proof your career against AI
               </h3>
               <p className="text-[#676766] leading-relaxed text-lg">
-                Master the strategic judgment and facilitation skills that AI
-                can't replace—synthesis, stakeholder alignment, and navigating
-                ambiguity
+                AI can't make a judgment call with incomplete information or
+                align a room full of conflicting stakeholders. That's what
+                you'll practice here.
               </p>
             </div>
           </div>
@@ -376,10 +379,13 @@ export default function App() {
                 Is this like a bootcamp?
               </AccordionTrigger>
               <AccordionContent className="text-[#676766] leading-relaxed text-lg">
-                No. Bootcamps are built to get career-changers into entry-level
-                roles through tactical skills. AC4D is built to help practicing
-                designers move from mid-level execution into senior strategic
-                work. The pedagogy, projects, and expectations are different.
+                No. Bootcamps teach tools and tactical skills to get
+                career-changers into entry-level roles. They give you clean
+                projects with known solutions. AC4D is built for practicing
+                designers who already have the craft skills but need strategic
+                reps on messy, ambiguous problems—the kind of work that actually
+                separates mid-level from senior. The pedagogy, projects, and
+                expectations are fundamentally different.
               </AccordionContent>
             </AccordionItem>
 
@@ -393,9 +399,10 @@ export default function App() {
               <AccordionContent className="text-[#676766] leading-relaxed text-lg">
                 AI is embedded into how you work, not taught as a separate
                 module. You'll use it to support synthesis, patterning, and
-                scenario exploration—while you develop the strategic judgment AI
-                can't replace. The goal is to make you more valuable in an AI
-                world.
+                scenario exploration—while you develop the strategic judgment
+                and facilitation skills that AI can't replicate. Most programs
+                are teaching you to use AI tools. AC4D is building the
+                capabilities that make you irreplaceable alongside AI.
               </AccordionContent>
             </AccordionItem>
 
@@ -408,8 +415,8 @@ export default function App() {
               </AccordionTrigger>
               <AccordionContent className="text-[#676766] leading-relaxed text-lg">
                 Many do. Tuition reimbursement programs typically cover
-                $5,000-5,250/year—meaning your company may pay for most of it.
-                Worth asking HR before you assume it's out of pocket.
+                $5,000-5,250/year. It's worth asking HR before you assume it's
+                out of pocket.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
