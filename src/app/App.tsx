@@ -323,7 +323,7 @@ export default function App() {
                     loading="lazy"
                   />
                 </div>
-                <span>Jessica L, AC4D Graduate</span>
+                <span>Jessica Leibowitz, AC4D Graduate</span>
               </footer>
             </blockquote>
             <div className="relative">
